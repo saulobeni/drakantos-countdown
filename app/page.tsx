@@ -2,6 +2,12 @@
 
 import { useState, useEffect } from "react"
 
+const backgrounds = [
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gif%201.gif-ujuj8QEttMKY8IQERSg43GLaH0G8iu.jpeg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagem%201-peJ3wZESr62z74OcQfj099Nsz9M7JA.jpg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagem%202-QVivQ37w1eWcbWRXSWumcdcxYZMC1x.jpg",
+]
+
 export default function DrakantosCountdown() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -9,6 +15,16 @@ export default function DrakantosCountdown() {
     minutes: 0,
     seconds: 0,
   })
+  const [currentBgIndex, setCurrentBgIndex] = useState(0)
+
+  // Background slideshow effect
+  useEffect(() => {
+    const bgTimer = setInterval(() => {
+      setCurrentBgIndex((prev) => (prev + 1) % backgrounds.length)
+    }, 5000) // Muda a cada 5 segundos
+
+    return () => clearInterval(bgTimer)
+  }, [])
 
   useEffect(() => {
     // Data de lançamento: 25/07/2025 às 10:00 (horário de Brasília - UTC-3)
@@ -35,15 +51,20 @@ export default function DrakantosCountdown() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/drakantos-bg.jpg')",
-        }}
-      >
+      {/* Background Slideshow */}
+      <div className="absolute inset-0">
+        {backgrounds.map((bg, index) => (
+          <div
+            key={index}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 ease-in-out"
+            style={{
+              backgroundImage: `url('${bg}')`,
+              transform: `translateX(${(index - currentBgIndex) * 100}%)`,
+            }}
+          />
+        ))}
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       {/* Content */}
