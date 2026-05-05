@@ -31,8 +31,9 @@ export default function DrakantosCountdown() {
   }, [])
 
   useEffect(() => {
-    // Data de lançamento: 25/07/2025 às 10:00 (horário de Brasília - UTC-3)
-    const launchDate = new Date("2025-07-25T10:00:00-03:00")
+    // Data de lançamento: 22/05/2026 às 00:00 (horário de Brasília - UTC-3)
+    // Horário ainda não divulgado, então contamos apenas os dias
+    const launchDate = new Date("2026-05-22T00:00:00-03:00")
 
     const timer = setInterval(() => {
       const now = new Date().getTime()
@@ -40,11 +41,8 @@ export default function DrakantosCountdown() {
 
       if (distance > 0) {
         const days = Math.floor(distance / (1000 * 60 * 60 * 24))
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
-        setTimeLeft({ days, hours, minutes, seconds })
+        setTimeLeft({ days, hours: 0, minutes: 0, seconds: 0 })
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
       }
@@ -94,21 +92,21 @@ export default function DrakantosCountdown() {
 
           <div className="bg-black/60 backdrop-blur-sm rounded-lg p-4 md:p-6 text-center border border-amber-600/30">
             <div className="text-3xl md:text-5xl font-bold text-amber-300 mb-2">
-              {timeLeft.hours.toString().padStart(2, "0")}
+              ??
             </div>
             <div className="text-sm md:text-base text-amber-100 uppercase tracking-wider">Horas</div>
           </div>
 
           <div className="bg-black/60 backdrop-blur-sm rounded-lg p-4 md:p-6 text-center border border-amber-600/30">
             <div className="text-3xl md:text-5xl font-bold text-amber-300 mb-2">
-              {timeLeft.minutes.toString().padStart(2, "0")}
+              ??
             </div>
             <div className="text-sm md:text-base text-amber-100 uppercase tracking-wider">Minutos</div>
           </div>
 
           <div className="bg-black/60 backdrop-blur-sm rounded-lg p-4 md:p-6 text-center border border-amber-600/30">
             <div className="text-3xl md:text-5xl font-bold text-amber-300 mb-2">
-              {timeLeft.seconds.toString().padStart(2, "0")}
+              ??
             </div>
             <div className="text-sm md:text-base text-amber-100 uppercase tracking-wider">Segundos</div>
           </div>
@@ -117,8 +115,8 @@ export default function DrakantosCountdown() {
         {/* Launch Date Info */}
         <div className="text-center bg-black/60 backdrop-blur-sm rounded-lg p-4 md:p-6 border border-amber-600/30">
           <p className="text-amber-100 text-lg md:text-xl mb-2">Data de Lançamento</p>
-          <p className="text-amber-300 text-xl md:text-2xl font-bold">25 de Julho de 2025</p>
-          <p className="text-amber-200 text-base md:text-lg">10:00 - Horário de Brasília</p>
+          <p className="text-amber-300 text-xl md:text-2xl font-bold">22 de Maio de 2026</p>
+          <p className="text-amber-200 text-base md:text-lg">Horário a ser divulgado</p>
         </div>
 
         {/* Footer */}
