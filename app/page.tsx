@@ -3,9 +3,13 @@
 import { useState, useEffect } from "react"
 
 const backgrounds = [
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gif%201.gif-ujuj8QEttMKY8IQERSg43GLaH0G8iu.jpeg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagem%201-peJ3wZESr62z74OcQfj099Nsz9M7JA.jpg",
-  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagem%202-QVivQ37w1eWcbWRXSWumcdcxYZMC1x.jpg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img4-i1J6irFRYjhzB5y00x73MwnWnDruDA.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img5-kKMfCpwzvtDv3LkP0SQZL0xpLj4Ekn.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img3-WKPKdJZSoSBxQ2CysUSG5kBRcP9wje.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img2-Mabu6kVgXrMgnTTRwDmPX9d4Zd7aTQ.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img6-uqEwuogFrkOixC0SKNTCyJeMWiBZX4.png",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagem%202-gs3H5VFp8W5ywnSAH1KGdcIhfSS10A.jpg",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imagem%201-GNtZCqNq4vJHSYNRBtXGU74GDct4qH.jpg",
 ]
 
 export default function DrakantosCountdown() {
