@@ -52,16 +52,21 @@ export default function DrakantosCountdown() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Slideshow */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-black">
         {backgrounds.map((bg, index) => (
           <div
             key={index}
-            className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-1000 ease-in-out bg-black"
+            className="absolute inset-0 flex items-center justify-center transition-transform duration-1000 ease-in-out"
             style={{
-              backgroundImage: `url('${bg}')`,
               transform: `translateX(${(index - currentBgIndex) * 100}%)`,
             }}
-          />
+          >
+            <img
+              src={bg}
+              alt=""
+              className="w-full h-full object-contain"
+            />
+          </div>
         ))}
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/50" />
