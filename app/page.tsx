@@ -56,7 +56,7 @@ export default function DrakantosCountdown() {
         {backgrounds.map((bg, index) => (
           <div
             key={index}
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 ease-in-out"
+            className="absolute inset-0 bg-contain bg-center bg-no-repeat transition-transform duration-1000 ease-in-out bg-black"
             style={{
               backgroundImage: `url('${bg}')`,
               transform: `translateX(${(index - currentBgIndex) * 100}%)`,
