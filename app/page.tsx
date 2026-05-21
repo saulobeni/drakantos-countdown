@@ -33,7 +33,7 @@ export default function DrakantosCountdown() {
   useEffect(() => {
     // Data de lançamento: 22/05/2026 às 00:00 (horário de Brasília - UTC-3)
     // Horário ainda não divulgado, então contamos apenas os dias
-    const launchDate = new Date("2026-05-22T00:00:00-03:00")
+    const launchDate = new Date("2026-05-22T10:00:00-03:00")
 
     const timer = setInterval(() => {
       const now = new Date().getTime()
